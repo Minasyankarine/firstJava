@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('stage 2') {
+      steps {
+        junit(testResults: 'test', allowEmptyResults: true, healthScaleFactor: 1, keepLongStdio: true)
+      }
+    }
+
   }
 }
